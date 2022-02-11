@@ -25,6 +25,11 @@ namespace MyLibrary
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
             MainFrame.Content = new AuthPage();
             DoubleAnimation visabilityAnim = new DoubleAnimation();
             visabilityAnim.From = 0.0;
@@ -32,7 +37,5 @@ namespace MyLibrary
             visabilityAnim.Duration = TimeSpan.FromSeconds(1);
             MainFrame.BeginAnimation(Frame.OpacityProperty, visabilityAnim);
         }
-
-       
     }
 }

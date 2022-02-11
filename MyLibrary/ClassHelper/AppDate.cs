@@ -8,6 +8,6 @@ namespace MyLibrary.ClassHelper
 {
     class AppDate
     {
-        public static DBModel.DB_Library Context { get; } = new DBModel.DB_Library();
+        public static DBModel.Entities Context { get; } = new DBModel.Entities();
     }
 }

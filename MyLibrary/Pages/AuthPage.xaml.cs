@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -20,11 +21,14 @@ namespace MyLibrary.Pages
     /// <summary>
     /// Логика взаимодействия для AuthPage.xaml
     /// </summary>
+    
     public partial class AuthPage : Page
     {
+        DispatcherTimer timer = new DispatcherTimer();
         public AuthPage()
         {
             InitializeComponent();
+          
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,13 +43,23 @@ namespace MyLibrary.Pages
                 visabilityAnim.To = 0.0;
                 visabilityAnim.Duration = TimeSpan.FromSeconds(1);
                 MainGrid.BeginAnimation(Grid.OpacityProperty, visabilityAnim);
+               
+                timer.Interval = TimeSpan.FromSeconds(1);
+                timer.Tick += Timer_Tick;
+                timer.Start();
+               
             }
             else
             {
-              
-
                 MessageBox.Show("Пользователь с такими данными не найден!");
             }
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            
+            NavigationService.Navigate(new SelectPage());
+            timer.Stop();
         }
     }
 }
