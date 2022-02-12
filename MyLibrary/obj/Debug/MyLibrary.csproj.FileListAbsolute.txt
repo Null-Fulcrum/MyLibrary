@@ -55,3 +55,11 @@ C:\Users\fulcrum\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\SelectPage.g.c
 C:\Users\fulcrum\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\SelectPage.baml
 C:\Users\fulcrum\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\BookListPage.g.cs
 C:\Users\fulcrum\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\BookListPage.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\BookListPage.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\SelectPage.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\BookListPage.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\SelectPage.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\ReaderListPage.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\ReaderListPage.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddReaderWindow.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddReaderWindow.baml

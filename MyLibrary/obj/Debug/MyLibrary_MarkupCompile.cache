@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\fulcrum\source\repos\MyLibrary\MyLibrary\obj\Debug\
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\
 MyLibrary
 none
 false
 DEBUG;TRACE
-C:\Users\fulcrum\source\repos\MyLibrary\MyLibrary\App.xaml
-51567802217
-2-1763911649
-242124446687
-18670220865
-Dictionary.xaml;MainWindow.xaml;Pages\AuthPage.xaml;Pages\BookListPage.xaml;Pages\SelectPage.xaml;
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\App.xaml
+7-1492880702
+2-1136655706
+26-1355219162
+181275471587
+AddReaderWindow.xaml;Dictionary.xaml;MainWindow.xaml;Pages\AuthPage.xaml;Pages\BookListPage.xaml;Pages\ReaderListPage.xaml;Pages\SelectPage.xaml;
 
 False
 

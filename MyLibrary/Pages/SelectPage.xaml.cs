@@ -25,6 +25,7 @@ namespace MyLibrary.Pages
         public SelectPage()
         {
             InitializeComponent();
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -39,6 +40,10 @@ namespace MyLibrary.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SubFrame.Content = new BookListPage();
+        }
+        private void ListReader(object sender, RoutedEventArgs e)
+        {
+            SubFrame.Content = new ReaderListPage();
         }
     }
 }
