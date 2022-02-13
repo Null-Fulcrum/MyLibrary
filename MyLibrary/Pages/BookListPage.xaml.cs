@@ -116,6 +116,14 @@ namespace MyLibrary.Pages
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void Click_Change(object sender, RoutedEventArgs e)
+        {
+            var item = listBook.SelectedItem as DBModel.Book;
+            ChangeBookWindow changebookwindow = new ChangeBookWindow(item);
+            changebookwindow.ShowDialog();
+            Filter();
+        }
     }
 }
 

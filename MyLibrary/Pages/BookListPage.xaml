@@ -36,7 +36,7 @@
                       SelectionChanged="cmbSort_SelectionChanged"/>
             <Button Content="Add" Width="60" Height="30" Margin="5 6 0 0" Style="{DynamicResource ButtonStyle1}" Foreground="#FF40FAE9" Background="{x:Null}" BorderBrush="#FF40FAE9" Click="btnAddBook_Click"/>
             <Button Content="Remove" Width="60" Height="30" Margin="5 6 0 0" Style="{DynamicResource ButtonStyle1}" Foreground="#FFFA6640" Background="{x:Null}" BorderBrush="#FFFA6640" Click="Click_Delete"/>
-            <Button Content="Change" Width="60" Height="30" Margin="5 6 0 0" Style="{DynamicResource ButtonStyle1}" Foreground="#FFF4FA40" Background="{x:Null}" BorderBrush="#FFF4FA40"/>
+            <Button Content="Change" Width="60" Height="30" Margin="5 6 0 0" Style="{DynamicResource ButtonStyle1}" Foreground="#FFF4FA40" Background="{x:Null}" BorderBrush="#FFF4FA40" Click="Click_Change"/>
         </WrapPanel>
     </Grid>
 </Page>

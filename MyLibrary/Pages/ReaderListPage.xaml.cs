@@ -109,5 +109,13 @@ namespace MyLibrary.Pages
                 }
             }
         }
+
+        private void Click_Change(object sender, RoutedEventArgs e)
+        {
+            var item = listReader.SelectedItem as DBModel.Reader;
+            ChangeReaderWindow changereaderwindow = new ChangeReaderWindow(item);
+            changereaderwindow.ShowDialog();
+            Filter();
+        }
     }
 }

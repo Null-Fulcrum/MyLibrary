@@ -12,27 +12,40 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MyLibrary.DBModel;
 using MyLibrary.ClassHelper;
+using MyLibrary.DBModel;
 
 namespace MyLibrary
 {
     /// <summary>
-    /// Логика взаимодействия для AddReaderWindow.xaml
+    /// Логика взаимодействия для ChangeReaderWindow.xaml
     /// </summary>
-    public partial class AddReaderWindow : Window
+    public partial class ChangeReaderWindow : Window
     {
-        public AddReaderWindow()
+        DBModel.Reader changereader = new DBModel.Reader();
+        public ChangeReaderWindow()
+        {
+            InitializeComponent();
+
+
+        }
+        public ChangeReaderWindow(DBModel.Reader reader)
         {
             InitializeComponent();
             cmbGender.ItemsSource = AppDate.Context.Gender.ToList();
             cmbGender.DisplayMemberPath = "NameGender";
-            cmbGender.SelectedIndex = 0;
+            cmbGender.SelectedIndex = reader.IDGender + 1;
+            changereader = reader;
+            txtLastName.Text = reader.LastName;
+            txtFirstName.Text = reader.FirstName;
+            txtPhone.Text = reader.Phone;
+            txtEmail.Text = reader.Email;
+            txtAddress.Text = reader.Address;
+
         }
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            //Валидация
-            //Проверка на пустоту
 
             if (string.IsNullOrWhiteSpace(txtLastName.Text))
             {
@@ -95,31 +108,19 @@ namespace MyLibrary
                 MessageBox.Show("В поле Адрес недопустимое количество символов", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
-
-            //Проверка на ошибки в БД
-
             try
             {
-                var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите добавление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите редактирование", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (resultClick == MessageBoxResult.Yes)
                 {
-                    //Добавление нового читателя
-                    DBModel.Reader reader = new DBModel.Reader();
-                    reader.LastName = txtLastName.Text;
-                    reader.FirstName = txtFirstName.Text;
-                    reader.Phone = txtPhone.Text;
-                    reader.Email = txtEmail.Text;
-                    reader.Address = txtAddress.Text;
-                    reader.IDGender = cmbGender.SelectedIndex + 1;
-                    AppDate.Context.Reader.Add(reader);
+                    changereader.LastName = txtLastName.Text;
+                    changereader.FirstName = txtFirstName.Text;
+                    changereader.Phone = txtPhone.Text;
+                    changereader.Email = txtEmail.Text;
+                    changereader.Address = txtAddress.Text;
+                    changereader.IDGender = cmbGender.SelectedIndex + 1;
                     AppDate.Context.SaveChanges();
-                    MessageBox.Show("Пользователь успешно добавлен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-                    DoubleAnimation visabilityAnim = new DoubleAnimation();
-                    visabilityAnim.From = 1.0;
-                    visabilityAnim.To = 0.0;
-                    visabilityAnim.Duration = TimeSpan.FromSeconds(2);
-                    MainGrid.BeginAnimation(Grid.OpacityProperty, visabilityAnim);
+                    MessageBox.Show("Пользователь успешно изменен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
                 }
             }
@@ -129,8 +130,14 @@ namespace MyLibrary
             }
         }
 
-        //Валидация
-        //Запрет на ввод некоректных данных
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation visabilityAnim = new DoubleAnimation();
+            visabilityAnim.From = 0.0;
+            visabilityAnim.To = 1.0;
+            visabilityAnim.Duration = TimeSpan.FromSeconds(2);
+            MainGrid.BeginAnimation(Grid.OpacityProperty, visabilityAnim);
+        }
         private void txtPhone_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (sender is TextBox txtPhone)
@@ -139,17 +146,6 @@ namespace MyLibrary
                 txtPhone.SelectionStart = e.Changes.First().Offset + 1;
                 txtPhone.SelectionLength = 0;
             }
-        }
-
-
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            DoubleAnimation visabilityAnim = new DoubleAnimation();
-            visabilityAnim.From = 0.0;
-            visabilityAnim.To = 1.0;
-            visabilityAnim.Duration = TimeSpan.FromSeconds(2);
-            MainGrid.BeginAnimation(Grid.OpacityProperty, visabilityAnim);
         }
     }
 }

@@ -65,3 +65,7 @@ C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddReaderWindow.g.cs
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddReaderWindow.baml
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddBookWindow.g.cs
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddBookWindow.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeBookWindow.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeBookWindow.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeReaderWindow.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeReaderWindow.baml

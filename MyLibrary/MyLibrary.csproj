@@ -72,6 +72,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ChangeBookWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeReaderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +97,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChangeBookWindow.xaml.cs">
+      <DependentUpon>ChangeBookWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeReaderWindow.xaml.cs">
+      <DependentUpon>ChangeReaderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClassHelper\AppDate.cs" />
     <Compile Include="DBModel\Author.cs">
