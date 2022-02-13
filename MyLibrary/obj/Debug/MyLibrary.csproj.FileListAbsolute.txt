@@ -63,3 +63,5 @@ C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\ReaderListPage.g
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\ReaderListPage.baml
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddReaderWindow.g.cs
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddReaderWindow.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddBookWindow.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddBookWindow.baml

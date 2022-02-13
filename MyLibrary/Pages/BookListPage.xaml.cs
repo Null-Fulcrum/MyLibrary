@@ -71,8 +71,10 @@ namespace MyLibrary.Pages
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-      
-       
+            AddBookWindow addBookWindow = new AddBookWindow();
+            addBookWindow.ShowDialog();
+            Filter();
+
         }
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -85,32 +87,6 @@ namespace MyLibrary.Pages
             Filter();
         }
 
-        private void listBook_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Delete)
-            {
-                if (listBook.SelectedItem is DBModel.Book)
-                {
-                    try
-                    {
-                        var item = listBook.SelectedItem as DBModel.Book;
-                        var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                        if (resultClick == MessageBoxResult.Yes)
-                        {
-                            AppDate.Context.Book.Remove(item);
-                            AppDate.Context.SaveChanges();
-                            MessageBox.Show("Книга успешно удалена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-                            Filter();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString());
-                    }
-                }
-            }
-        }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             DoubleAnimation visabilityAnim = new DoubleAnimation();
@@ -118,6 +94,27 @@ namespace MyLibrary.Pages
             visabilityAnim.To = 1.0;
             visabilityAnim.Duration = TimeSpan.FromSeconds(2);
             MainGrid.BeginAnimation(Grid.OpacityProperty, visabilityAnim);
+        }
+
+        private void Click_Delete(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                var item = listBook.SelectedItem as DBModel.Book;
+                var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (resultClick == MessageBoxResult.Yes)
+                {
+                    AppDate.Context.Book.Remove(item);
+                    AppDate.Context.SaveChanges();
+                    MessageBox.Show("Книга успешно удалена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Filter();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

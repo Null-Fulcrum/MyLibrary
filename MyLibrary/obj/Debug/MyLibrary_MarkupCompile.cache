@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\App.xaml
-7-1492880702
+8-456056327
 2-1136655706
-26-1355219162
+27-1765419905
 181275471587
-AddReaderWindow.xaml;Dictionary.xaml;MainWindow.xaml;Pages\AuthPage.xaml;Pages\BookListPage.xaml;Pages\ReaderListPage.xaml;Pages\SelectPage.xaml;
+AddBookWindow.xaml;AddReaderWindow.xaml;Dictionary.xaml;MainWindow.xaml;Pages\AuthPage.xaml;Pages\BookListPage.xaml;Pages\ReaderListPage.xaml;Pages\SelectPage.xaml;
 
 False
 
