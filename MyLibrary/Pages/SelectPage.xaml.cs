@@ -45,5 +45,11 @@ namespace MyLibrary.Pages
         {
             SubFrame.Content = new ReaderListPage();
         }
+
+
+        private void ListDeliver(object sender, RoutedEventArgs e)
+        {
+            SubFrame.Content = new DeliverListPage();
+        }
     }
 }

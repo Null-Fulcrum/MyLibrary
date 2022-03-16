@@ -6,7 +6,6 @@ C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\bin\Debug\EntityFramework.SqlSer
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\bin\Debug\EntityFramework.xml
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\bin\Debug\ru\EntityFramework.resources.dll
-C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csprojAssemblyReference.cache
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\MainWindow.g.cs
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\App.g.cs
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\MyLibrary_Content.g.cs
@@ -69,3 +68,8 @@ C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeBookWindow.g.cs
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeBookWindow.baml
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeReaderWindow.g.cs
 C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\ChangeReaderWindow.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csproj.AssemblyReference.cache
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddDeliverWindow.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\DeliverListPage.g.cs
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\AddDeliverWindow.baml
+C:\Users\Nikit\source\repos\MyLibrary\MyLibrary\obj\Debug\Pages\DeliverListPage.baml

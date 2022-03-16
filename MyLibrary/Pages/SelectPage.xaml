@@ -27,8 +27,9 @@
             </Label>
         </StackPanel>
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <Button Content="Books List" Width="100" Margin="0 0 0 20" Style="{DynamicResource ButtonStyle1}" Background="{x:Null}" Foreground="White" Click="Button_Click" BorderBrush="#FFFCF8F8"/>    
-            <Button Content="Reader List" Width="100" Style="{DynamicResource ButtonStyle1}" Background="{x:Null}" Foreground="#FFFEFAFA" BorderBrush="#FFFEFDFD" Click="ListReader"/>        
+            <Button Content="Books List" Width="100" Margin="0 0 0 20" Style="{DynamicResource ButtonStyle1}" Background="{x:Null}" Foreground="White" Click="Button_Click" BorderBrush="#FFFCF8F8"/>
+            <Button Content="Reader List" Width="100"  Margin="0 0 0 20" Style="{DynamicResource ButtonStyle1}" Background="{x:Null}" Foreground="#FFFEFAFA" BorderBrush="#FFFEFDFD" Click="ListReader"/>        
+            <Button Content="Deliver List" Width="100" Style="{DynamicResource ButtonStyle1}" Background="{x:Null}" Foreground="#FFFEFAFA" BorderBrush="#FFFEFDFD" Click="ListDeliver"/>        
         </StackPanel>
         <Frame x:Name="SubFrame" Grid.Column="1"/>
     </Grid>
