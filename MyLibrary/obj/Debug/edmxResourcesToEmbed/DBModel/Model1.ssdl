@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Хранилище DB_My_LibraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Author">
     <Key>
       <PropertyRef Name="ID" />
@@ -18,6 +18,7 @@
     <Property Name="IDAuthor" Type="int" Nullable="false" />
     <Property Name="IDSection" Type="int" Nullable="false" />
     <Property Name="IDPublishHouse" Type="int" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="BookAndGenre">
     <Key>
@@ -37,6 +38,8 @@
     <Property Name="StartDate" Type="date" Nullable="false" />
     <Property Name="EndDate" Type="date" Nullable="false" />
     <Property Name="IDEmplovee" Type="int" />
+    <Property Name="Dept" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsBack" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Emplovee">
     <Key>
@@ -82,6 +85,7 @@
     <Property Name="Email" Type="nchar" MaxLength="100" />
     <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="IDGender" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="binary" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Selection">
     <Key>
@@ -239,7 +243,7 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <EntityContainer Name="Хранилище ModelContainer">
+  <EntityContainer Name="Хранилище DB_My_LibraryModelContainer">
     <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BookAndGenre" EntityType="Self.BookAndGenre" Schema="dbo" store:Type="Tables" />

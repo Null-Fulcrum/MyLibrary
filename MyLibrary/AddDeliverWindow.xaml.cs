@@ -60,7 +60,7 @@ namespace MyLibrary
                     bookRental.IDReader = cmbReader.SelectedIndex + 1;
                     bookRental.IDEmplovee = cmbEmployer.SelectedIndex + 1;
                     bookRental.StartDate = dtDateStart.DisplayDate;
-                    bookRental.EndDate = dtDateEnd.DisplayDate;
+                   
 
                     AppDate.Context.BookRental.Add(bookRental);
                     AppDate.Context.SaveChanges();

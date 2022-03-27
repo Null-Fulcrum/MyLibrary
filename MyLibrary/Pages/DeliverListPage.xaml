@@ -22,6 +22,7 @@
                     <GridViewColumn Header="Название книги"  DisplayMemberBinding="{Binding Book.Title}"/>
                     <GridViewColumn Header="Дата взятие"  DisplayMemberBinding="{Binding StartDate}"/>
                     <GridViewColumn Header="Дата возврата"  DisplayMemberBinding="{Binding EndDate}"/>
+                    <GridViewColumn Header="Долг"  DisplayMemberBinding="{Binding Dept}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -36,6 +37,10 @@
             <DatePicker VerticalAlignment="Center"/>
             <DatePicker VerticalAlignment="Center"/>
         </WrapPanel>
-        <Button Grid.Row="1" VerticalAlignment="Bottom" Content="Добавить" FontSize="20px" Width="100"  Margin="0 0 0 5" Click="btnAddDeliver" />
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 5" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button  Content="Добавить" FontSize="20px" Width="100"   Click="btnAddDeliver" Margin="0 0 10 0" />
+            <Button  Content="Сдать книгу" FontSize="20px" Width="120"   Click="btnDeliverBook" />
+        </StackPanel>
+        
     </Grid>
 </Page>

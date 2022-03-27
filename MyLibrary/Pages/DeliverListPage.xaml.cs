@@ -31,7 +31,6 @@ namespace MyLibrary.Pages
 
             cmbSort.ItemsSource = listSort;
             cmbSort.SelectedIndex = 0;
-            
             Filter();
         }
          private void Filter()
@@ -62,6 +61,13 @@ namespace MyLibrary.Pages
             listDeliver.ItemsSource = rentBookList;
             
         }
+        private void UpdateDept()
+        {
+                var item = listDeliver.SelectedItem as DBModel.BookRental;
+                item.Dept = (decimal)RentClass.Debt(item.IDBook,item.StartDate,item.EndDate);
+                AppDate.Context.SaveChanges();
+            
+        }
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -87,6 +93,20 @@ namespace MyLibrary.Pages
         {
             AddDeliverWindow addDeliver = new AddDeliverWindow();
             addDeliver.ShowDialog();
+            Filter();
+        }
+
+   
+
+      
+
+        private void btnDeliverBook(object sender, RoutedEventArgs e)
+        {
+            var item = listDeliver.SelectedItem as DBModel.BookRental;
+            item.EndDate = DateTime.Now.Date;
+            AppDate.Context.SaveChanges();
+            MessageBox.Show("Книга сдана");
+            UpdateDept();
             Filter();
         }
     }

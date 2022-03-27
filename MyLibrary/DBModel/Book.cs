@@ -26,6 +26,7 @@ namespace MyLibrary.DBModel
         public int IDAuthor { get; set; }
         public int IDSection { get; set; }
         public int IDPublishHouse { get; set; }
+        public decimal Cost { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual PublishHouse PublishHouse { get; set; }

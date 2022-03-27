@@ -71,17 +71,7 @@
                    Grid.Row="3"
                    VerticalAlignment="Center"/>
 
-        <TextBlock Text="Дата сдачи"
-                   HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
-                   FontSize="10"
-                   FontFamily="Helvetica"
-                   FontStyle="Normal"
-                   FontWeight="Normal"
-                   FontStretch="Normal"
-                   Foreground="#ffffff"
-                   Grid.Row="4"
-                   VerticalAlignment="Center"/>
+        
 
         <TextBlock Text="Сотрудник"
                    HorizontalAlignment="Right"
@@ -92,7 +82,7 @@
                    FontWeight="Normal"
                    FontStretch="Normal"
                    Foreground="#ffffff"
-                   Grid.Row="5"
+                   Grid.Row="4"
                    VerticalAlignment="Center"/>
 
 
@@ -132,18 +122,7 @@
                  Grid.Row="3"
                  Height="30"/>
 
-        <DatePicker x:Name="dtDateEnd"
-                 HorizontalAlignment="Left"
-                 Margin="10 0 0 0"
-                 Width="150"
-                 FontFamily="Helvetica"
-                 FontStyle="Normal"
-                 FontWeight="Normal"
-                 FontStretch="Normal"
-                 VerticalContentAlignment="Center"
-                 Grid.Column="1"
-                 Grid.Row="4"
-                 Height="30"/>
+        
 
 
         <ComboBox x:Name="cmbEmployer"
@@ -156,7 +135,7 @@
                  FontStretch="Normal"
                  VerticalContentAlignment="Center"
                  Grid.Column="1"
-                 Grid.Row="5"
+                 Grid.Row="4"
                  Height="30"/>
 
         <Button  x:Name="btnAddBook"

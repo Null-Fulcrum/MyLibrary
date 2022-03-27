@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MyLibrary.ClassHelper;
 using MyLibrary.DBModel;
+using Microsoft.Win32;
 
 namespace MyLibrary
 {
@@ -23,12 +25,7 @@ namespace MyLibrary
     public partial class ChangeReaderWindow : Window
     {
         DBModel.Reader changereader = new DBModel.Reader();
-        public ChangeReaderWindow()
-        {
-            InitializeComponent();
-
-
-        }
+        string pathPhoto = null;
         public ChangeReaderWindow(DBModel.Reader reader)
         {
             InitializeComponent();
@@ -41,7 +38,20 @@ namespace MyLibrary
             txtPhone.Text = reader.Phone;
             txtEmail.Text = reader.Email;
             txtAddress.Text = reader.Address;
+            if (reader.Photo != null)
+            {
+                using (MemoryStream stream = new MemoryStream(reader.Photo))
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                    bitmapImage.StreamSource = stream;
+                    bitmapImage.EndInit();
+                    imgUser.Source = bitmapImage;
 
+                }
+            }
         }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
@@ -119,6 +129,10 @@ namespace MyLibrary
                     changereader.Email = txtEmail.Text;
                     changereader.Address = txtAddress.Text;
                     changereader.IDGender = cmbGender.SelectedIndex + 1;
+                    if (pathPhoto != null)
+                    {
+                        changereader.Photo = File.ReadAllBytes(pathPhoto);
+                    }
                     AppDate.Context.SaveChanges();
                     MessageBox.Show("Пользователь успешно изменен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
@@ -145,6 +159,16 @@ namespace MyLibrary
                 txtPhone.Text = new string(txtPhone.Text.Where(ch => ch == '+' || ch == '-' || (ch >= '0' && ch <= '9') || ch == '(' || ch == ')').ToArray());
                 txtPhone.SelectionStart = e.Changes.First().Offset + 1;
                 txtPhone.SelectionLength = 0;
+            }
+        }
+        private void btnChoosePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imgUser.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+
+                pathPhoto = openFileDialog.FileName;
             }
         }
     }

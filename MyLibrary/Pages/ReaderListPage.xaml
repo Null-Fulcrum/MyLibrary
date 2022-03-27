@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <ListView x:Name="listReader" 
                   Grid.Row="1" Background="#BF000000" Foreground="#FF3C5993" >
-            <ListView.View>
+            <!--<ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="Auto" DisplayMemberBinding="{Binding ID}"/>
                     <GridViewColumn Header="Фамилия" Width="Auto" DisplayMemberBinding="{Binding LastName}"/>
@@ -25,7 +25,132 @@
                     <GridViewColumn Header="Адрес" Width="Auto" DisplayMemberBinding="{Binding Address}"/>
                     <GridViewColumn Header="Пол" Width="Auto" DisplayMemberBinding="{Binding Gender.NameGender}"/>
                 </GridView>
-            </ListView.View>
+            </ListView.View>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#19FFFFFF"
+                            Height="100"
+                            Width="600"
+                            Margin="5"
+                            CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="photoUser"
+                                   Height="80">
+                                <Image.Source>
+                                    <Binding Path ="Photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>../images/premium-icon-user-3329457.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+
+                            <StackPanel Grid.Column="1"
+                                        Margin="0 10 10 0">
+                                <TextBlock Margin="0 0 0 5"
+                                           Text="Фамилия"
+                                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                                           Text="Имя"
+                                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                                           Text="Телефон"
+                                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2"
+                            Margin="10 10 0 0">
+                                <TextBlock Margin="0 0 0 5"
+                               Text="{Binding Path=LastName}"
+                               HorizontalAlignment="Left"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                           Text="{Binding Path=FirstName}"
+                           HorizontalAlignment="Left"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                           Text="{Binding Path=Phone}"
+                           HorizontalAlignment="Left"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="3"
+                            Margin="0 10 10 0">
+                                <TextBlock Margin="0 0 0 5"
+                               Text="Пол"
+                               HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                           Text="Email"
+                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                           Text="Адрес"
+                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="4"
+                            Margin="10 10 0 0">
+                                <TextBlock Margin="0 0 0 5"
+                               Text="{Binding Path=Gender.NameGender}"
+                               HorizontalAlignment="Left"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                           Text="{Binding Path=Email}"
+                           HorizontalAlignment="Left"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                           Text="{Binding Path=Address}"
+                           HorizontalAlignment="Left"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <WrapPanel Grid.Row="0" VerticalAlignment="Center" Height="50" Background="#7F000000" >
             <Label Content="Search" FontSize="20" Foreground="White" Margin="0 5 0 0"/>

@@ -4,25 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8f664b5e280341b297949074845e958e" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.Author" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Book" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BookRental" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Emplovee" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Gender" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Genre" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PublishHouse" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Reader" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Selection" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
-        <AssociationConnector Association="Model.FK_Book_Author" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_Book_PublishHouse" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_Book_Selection" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_BookRental_Book" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_BookRental_Emplovee" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_BookRental_Reader" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_Reader_Gender" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.BookAndGenre" ManuallyRouted="false" />
+      <Diagram DiagramId="e0784d36f269451d8578f0cadd234bda" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_My_LibraryModel.Author" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.Book" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.BookRental" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.Emplovee" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.Gender" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.Genre" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.PublishHouse" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.Reader" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.Selection" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_My_LibraryModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_My_LibraryModel.FK_Book_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_My_LibraryModel.FK_Book_PublishHouse" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_My_LibraryModel.FK_Book_Selection" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_My_LibraryModel.FK_BookRental_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_My_LibraryModel.FK_BookRental_Emplovee" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_My_LibraryModel.FK_BookRental_Reader" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_My_LibraryModel.FK_Reader_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_My_LibraryModel.BookAndGenre" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

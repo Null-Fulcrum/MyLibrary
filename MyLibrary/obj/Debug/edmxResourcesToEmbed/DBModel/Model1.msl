@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DB_My_LibraryModelContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="Author">
-      <EntityTypeMapping TypeName="Model.Author">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.Author">
         <MappingFragment StoreEntitySet="Author">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -12,29 +12,32 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Book">
-      <EntityTypeMapping TypeName="Model.Book">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.Book">
         <MappingFragment StoreEntitySet="Book">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="IDAuthor" ColumnName="IDAuthor" />
           <ScalarProperty Name="IDSection" ColumnName="IDSection" />
           <ScalarProperty Name="IDPublishHouse" ColumnName="IDPublishHouse" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="BookRental">
-      <EntityTypeMapping TypeName="Model.BookRental">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.BookRental">
         <MappingFragment StoreEntitySet="BookRental">
           <ScalarProperty Name="IDReader" ColumnName="IDReader" />
           <ScalarProperty Name="IDBook" ColumnName="IDBook" />
           <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="EndDate" ColumnName="EndDate" />
           <ScalarProperty Name="IDEmplovee" ColumnName="IDEmplovee" />
+          <ScalarProperty Name="Dept" ColumnName="Dept" />
+          <ScalarProperty Name="IsBack" ColumnName="IsBack" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Emplovee">
-      <EntityTypeMapping TypeName="Model.Emplovee">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.Emplovee">
         <MappingFragment StoreEntitySet="Emplovee">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -47,7 +50,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Gender">
-      <EntityTypeMapping TypeName="Model.Gender">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.Gender">
         <MappingFragment StoreEntitySet="Gender">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NameGender" ColumnName="NameGender" />
@@ -55,7 +58,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Genre">
-      <EntityTypeMapping TypeName="Model.Genre">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.Genre">
         <MappingFragment StoreEntitySet="Genre">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NameGenre" ColumnName="NameGenre" />
@@ -63,7 +66,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PublishHouse">
-      <EntityTypeMapping TypeName="Model.PublishHouse">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.PublishHouse">
         <MappingFragment StoreEntitySet="PublishHouse">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NamePublishHouse" ColumnName="NamePublishHouse" />
@@ -71,7 +74,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reader">
-      <EntityTypeMapping TypeName="Model.Reader">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.Reader">
         <MappingFragment StoreEntitySet="Reader">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -80,11 +83,12 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Selection">
-      <EntityTypeMapping TypeName="Model.Selection">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.Selection">
         <MappingFragment StoreEntitySet="Selection">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NameSelection" ColumnName="NameSelection" />
@@ -92,7 +96,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="Model.sysdiagrams">
+      <EntityTypeMapping TypeName="DB_My_LibraryModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -102,7 +106,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="BookAndGenre" TypeName="Model.BookAndGenre" StoreEntitySet="BookAndGenre">
+    <AssociationSetMapping Name="BookAndGenre" TypeName="DB_My_LibraryModel.BookAndGenre" StoreEntitySet="BookAndGenre">
       <EndProperty Name="Book">
         <ScalarProperty Name="ID" ColumnName="IDBook" />
       </EndProperty>
@@ -110,20 +114,20 @@
         <ScalarProperty Name="ID" ColumnName="IDGenre" />
       </EndProperty>
     </AssociationSetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище Model.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище Model.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище Model.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище Model.sp_helpdiagramdefinition">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище DB_My_LibraryModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище DB_My_LibraryModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище DB_My_LibraryModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище DB_My_LibraryModel.sp_helpdiagramdefinition">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="Model.sp_helpdiagramdefinition_Result">
+        <ComplexTypeMapping TypeName="DB_My_LibraryModel.sp_helpdiagramdefinition_Result">
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище Model.sp_helpdiagrams">
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище DB_My_LibraryModel.sp_helpdiagrams">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="Model.sp_helpdiagrams_Result">
+        <ComplexTypeMapping TypeName="DB_My_LibraryModel.sp_helpdiagrams_Result">
           <ScalarProperty Name="Database" ColumnName="Database" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -132,7 +136,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Model.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Model.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище DB_My_LibraryModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище DB_My_LibraryModel.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

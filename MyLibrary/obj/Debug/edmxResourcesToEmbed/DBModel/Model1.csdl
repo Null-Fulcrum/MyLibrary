@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DB_My_LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Author">
     <Key>
       <PropertyRef Name="ID" />
@@ -19,6 +19,7 @@
     <Property Name="IDAuthor" Type="Int32" Nullable="false" />
     <Property Name="IDSection" Type="Int32" Nullable="false" />
     <Property Name="IDPublishHouse" Type="Int32" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <NavigationProperty Name="Author" Relationship="Self.FK_Book_Author" FromRole="Book" ToRole="Author" />
     <NavigationProperty Name="PublishHouse" Relationship="Self.FK_Book_PublishHouse" FromRole="Book" ToRole="PublishHouse" />
     <NavigationProperty Name="Selection" Relationship="Self.FK_Book_Selection" FromRole="Book" ToRole="Selection" />
@@ -35,6 +36,8 @@
     <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="IDEmplovee" Type="Int32" />
+    <Property Name="Dept" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsBack" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Book" Relationship="Self.FK_BookRental_Book" FromRole="BookRental" ToRole="Book" />
     <NavigationProperty Name="Emplovee" Relationship="Self.FK_BookRental_Emplovee" FromRole="BookRental" ToRole="Emplovee" />
     <NavigationProperty Name="Reader" Relationship="Self.FK_BookRental_Reader" FromRole="BookRental" ToRole="Reader" />
@@ -87,6 +90,7 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IDGender" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="1000" FixedLength="true" />
     <NavigationProperty Name="BookRental" Relationship="Self.FK_BookRental_Reader" FromRole="Reader" ToRole="BookRental" />
     <NavigationProperty Name="Gender" Relationship="Self.FK_Reader_Gender" FromRole="Reader" ToRole="Gender" />
   </EntityType>
@@ -255,11 +259,11 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Model.sp_helpdiagramdefinition_Result)">
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DB_My_LibraryModel.sp_helpdiagramdefinition_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Model.sp_helpdiagrams_Result)">
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DB_My_LibraryModel.sp_helpdiagrams_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>

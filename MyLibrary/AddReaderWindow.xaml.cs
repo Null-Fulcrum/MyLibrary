@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MyLibrary.DBModel;
+using Microsoft.Win32;
 using MyLibrary.ClassHelper;
 
 namespace MyLibrary
@@ -22,6 +24,7 @@ namespace MyLibrary
     /// </summary>
     public partial class AddReaderWindow : Window
     {
+        string pathPhoto = null;
         public AddReaderWindow()
         {
             InitializeComponent();
@@ -112,6 +115,10 @@ namespace MyLibrary
                     reader.Email = txtEmail.Text;
                     reader.Address = txtAddress.Text;
                     reader.IDGender = cmbGender.SelectedIndex + 1;
+                    if (pathPhoto != null)
+                    {
+                        reader.Photo = File.ReadAllBytes(pathPhoto);
+                    }
                     AppDate.Context.Reader.Add(reader);
                     AppDate.Context.SaveChanges();
                     MessageBox.Show("Пользователь успешно добавлен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -142,7 +149,16 @@ namespace MyLibrary
         }
 
 
+        private void btnChoosePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imgUser.Source = new BitmapImage(new Uri(openFileDialog.FileName));
 
+                pathPhoto = openFileDialog.FileName;
+            }
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DoubleAnimation visabilityAnim = new DoubleAnimation();

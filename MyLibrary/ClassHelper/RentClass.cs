@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyLibrary.DBModel;
 
 namespace MyLibrary.ClassHelper
 {
     class RentClass
     {
-        public static double Debt(double bookCost, DateTime startDate)
+        public static double Debt(int bookId ,DateTime startDate,DateTime endDate)
         {
-
+            List<Book> list = new List<Book>();
+            list = AppDate.Context.Book.ToList();
             double sum = 0;
-
-            if (Convert.ToInt32(DateTime.Now.Date - startDate.Date) > 30)
+            var cost = list.Where(i => i.ID == bookId).FirstOrDefault();
+            if ((DateTime.Now.Date - startDate.Date).TotalDays > 30)
             {
-                sum = bookCost * 0.1;
+                sum = (Convert.ToDouble(cost.Cost) * 0.1) * ((endDate.Date - startDate.Date).TotalDays - 30);
             }
 
-            return sum;
+            return (double) sum;
         }
     }
 }
